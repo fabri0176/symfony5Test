@@ -47,6 +47,11 @@ class Posts
      */
     private $comentarios;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="posts")
+     */
+    private $user;
+
     public function getId(): ?int
     {
         return $this->id;
