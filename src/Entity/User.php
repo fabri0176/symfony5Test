@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -142,19 +143,21 @@ class User implements UserInterface
     public function setNombre($nombre):self
     {
         $this->nombre = $nombre;
+        return $this;
     }
 
     public function setBaneado($baneado):self
     {
         $this->baneado = $baneado;
+        return $this;
     }
 
-    public function getNombre($nombre): string
+    public function getNombre(): string
     {
-        return $this->nombre;
+        return (string) $this->nombre;
     }
 
-    public function getBaneado($baneado): boolval
+    public function getBaneado(): boolval
     {
         return $this->baneado;
     }
