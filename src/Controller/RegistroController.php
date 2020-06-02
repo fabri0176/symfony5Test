@@ -39,7 +39,7 @@ class RegistroController extends AbstractController
             $em->flush();
 
             //Mensaje
-            $this->addFlash('success','El registro fue guardado correctamente');
+            $this->addFlash('success',User::REGISTRO_EXITOSO);
 
             //Redireccionamos a controlador
             return $this->redirectToRoute('registro');
