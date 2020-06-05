@@ -51,6 +51,13 @@ class Posts
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="posts")
      */
     private $user;
+    
+    
+    function __construct() {
+        $this->fecha_publicacion = new \DateTime();
+        $this->likes = 0;
+    }
+
 
     public function getId(): ?int
     {
@@ -113,6 +120,48 @@ class Posts
     public function setContenido(string $contenido): self
     {
         $this->contenido = $contenido;
+
+        return $this;
+    }
+
+    
+
+    /**
+     * Get the value of user
+     */ 
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set the value of user
+     *
+     * @return  self
+     */ 
+    public function setUser($user):void
+    {
+        $this->user = $user;
+
+        
+    }
+
+    /**
+     * Get the value of comentarios
+     */ 
+    public function getComentarios():string
+    {
+        return (string)$this->comentarios;
+    }
+
+    /**
+     * Set the value of comentarios
+     *
+     * @return  self
+     */ 
+    public function setComentarios($comentarios):self
+    {
+        $this->comentarios = $comentarios;
 
         return $this;
     }
