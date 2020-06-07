@@ -15,3 +15,6 @@ nbproject/
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 /nbproject/private/
+/public/uploads/
+.idea/
+composer.phar
